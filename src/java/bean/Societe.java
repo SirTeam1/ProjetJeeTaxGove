@@ -6,14 +6,10 @@
 package bean;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -30,14 +26,10 @@ public class Societe implements Serializable {
     private String raisonSociale;
     private String siegeSociale;
     private String numTele;
-    private String numFax;
+    private String numFix;
     private String email;
     @OneToOne
-    private Contribuable contribuable;
-    @OneToMany
-    private List<CompteBanquaire> compteBanquaires;
-    @ManyToMany
-    private List<Employe> employes;
+    private CompteBanquaire compteBanquaire;
 
     public long getId() {
         return id;
@@ -51,7 +43,7 @@ public class Societe implements Serializable {
         this.raisonSociale = raisonSociale;
         this.siegeSociale = siegeSociale;
         this.numTele = numTele;
-        this.numFax = numFax;
+        this.numFix = numFax;
         this.email = email;
     }
 
@@ -86,12 +78,12 @@ public class Societe implements Serializable {
         this.numTele = numTele;
     }
 
-    public String getNumFax() {
-        return numFax;
+    public String getNumFix() {
+        return numFix;
     }
 
-    public void setNumFax(String numFax) {
-        this.numFax = numFax;
+    public void setNumFix(String numFix) {
+        this.numFix = numFix;
     }
 
     public String getEmail() {
@@ -102,37 +94,15 @@ public class Societe implements Serializable {
         this.email = email;
     }
 
-    public List<Employe> getEmployes() {
-        if (employes == null) {
-            employes = new ArrayList();
+    public CompteBanquaire getCompteBanquaire() {
+        if (compteBanquaire == null) {
+            compteBanquaire = new CompteBanquaire();
         }
-        return employes;
+        return compteBanquaire;
     }
 
-    public void setEmployes(List<Employe> employes) {
-        this.employes = employes;
-    }
-
-    public Contribuable getContribuable() {
-        if (contribuable == null) {
-            contribuable = new Contribuable();
-        }
-        return contribuable;
-    }
-
-    public void setContribuable(Contribuable contribuable) {
-        this.contribuable = contribuable;
-    }
-
-    public List<CompteBanquaire> getCompteBanquaires() {
-        if (compteBanquaires == null) {
-            compteBanquaires = new ArrayList();
-        }
-        return compteBanquaires;
-    }
-
-    public void setCompteBanquaires(List<CompteBanquaire> compteBanquaires) {
-        this.compteBanquaires = compteBanquaires;
+    public void setCompteBanquaires(CompteBanquaire compteBanquaire) {
+        this.compteBanquaire = compteBanquaire;
     }
 
     @Override
@@ -157,7 +127,7 @@ public class Societe implements Serializable {
 
     @Override
     public String toString() {
-        return "Societe{" + "id=" + id + ", raisonSociale=" + raisonSociale + ", siegeSociale=" + siegeSociale + ", numTele=" + numTele + ", numFax=" + numFax + ", email=" + email + '}';
+        return "Societe{" + "id=" + id + ", raisonSociale=" + raisonSociale + ", siegeSociale=" + siegeSociale + ", numTele=" + numTele + ", numFax=" + numFix + ", email=" + email + '}';
     }
 
 }

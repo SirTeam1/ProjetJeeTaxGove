@@ -18,7 +18,7 @@ public class Utilisateur extends Employe implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long idFiscale;
-    private String droitFiscale;
+    private int droitFiscale;//1 , 2 , 3
     private String motDePasse;
 
     public Long getIdFiscale() {
@@ -36,18 +36,9 @@ public class Utilisateur extends Employe implements Serializable {
         this.idFiscale = idFiscale;
     }
 
-    public Utilisateur(Long idFiscale, String droitFiscale, String motDePasse) {
-        this.idFiscale = idFiscale;
+    public Utilisateur(int droitFiscale, String motDePasse) {
         this.droitFiscale = droitFiscale;
         this.motDePasse = motDePasse;
-    }
-
-    public String getDroitFiscale() {
-        return droitFiscale;
-    }
-
-    public void setDroitFiscale(String droitFiscale) {
-        this.droitFiscale = droitFiscale;
     }
 
     public String getMotDePasse() {
@@ -57,7 +48,14 @@ public class Utilisateur extends Employe implements Serializable {
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
     }
-    
+
+    public int getDroitFiscale() {
+        return droitFiscale;
+    }
+
+    public void setDroitFiscale(int droitFiscale) {
+        this.droitFiscale = droitFiscale;
+    }
 
     @Override
     public int hashCode() {
@@ -83,7 +81,5 @@ public class Utilisateur extends Employe implements Serializable {
     public String toString() {
         return "Utilisateur{" + "idFiscale=" + idFiscale + ", droitFiscale=" + droitFiscale + ", motDePasse=" + motDePasse + '}';
     }
-
-   
 
 }

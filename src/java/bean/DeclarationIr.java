@@ -30,8 +30,6 @@ public class DeclarationIr implements Serializable {
     private Long id;
     @ManyToOne
     private Societe societe;
-    @OneToMany
-    private List<Employe> employes;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateDeclaration;
     private Float montantIr;
@@ -80,17 +78,6 @@ public class DeclarationIr implements Serializable {
 
     public void setSociete(Societe societe) {
         this.societe = societe;
-    }
-
-    public List<Employe> getEmployes() {
-        if (employes == null) {
-            employes = new ArrayList();
-        }
-        return employes;
-    }
-
-    public void setEmployes(List<Employe> employes) {
-        this.employes = employes;
     }
 
     public Date getDateDeclaration() {

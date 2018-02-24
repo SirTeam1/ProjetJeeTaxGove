@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -31,8 +31,8 @@ public class Employe implements Serializable {
     private String numTele;
     private String email;
     private String profession;
-    @ManyToMany(mappedBy = "employes")
-    private List<Societe> societes;
+    @ManyToOne
+    private Societe societe;
 
     public Employe() {
     }
@@ -107,15 +107,15 @@ public class Employe implements Serializable {
         this.id = id;
     }
 
-    public List<Societe> getSocietes() {
-        if (societes == null) {
-            societes = new ArrayList();
+    public Societe getSociete() {
+        if (societe == null) {
+            societe = new Societe();
         }
-        return societes;
+        return societe;
     }
 
-    public void setSocietes(List<Societe> societes) {
-        this.societes = societes;
+    public void setSociete(Societe societe) {
+        this.societe = societe;
     }
 
     @Override

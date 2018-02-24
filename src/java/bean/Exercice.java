@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
@@ -33,6 +34,8 @@ public class Exercice implements Serializable {
     private Date dateFin;
     @OneToOne
     private CategorieTVA categorieTVA;
+    @ManyToOne
+    private Societe societe;
 
     public Exercice() {
     }

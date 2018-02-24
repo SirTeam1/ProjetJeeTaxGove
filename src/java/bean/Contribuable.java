@@ -8,7 +8,6 @@ package bean;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 
 /**
  *
@@ -20,8 +19,6 @@ public class Contribuable extends Employe implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long idFiscal;
     private String motDePasse;
-    @OneToOne(mappedBy = "contribuable")
-    private Societe societe;
 
     public Contribuable() {
     }
@@ -49,17 +46,6 @@ public class Contribuable extends Employe implements Serializable {
 
     public void setIdFiscal(Long idFiscal) {
         this.idFiscal = idFiscal;
-    }
-
-    public Societe getSociete() {
-        if (societe == null) {
-            societe = new Societe();
-        }
-        return societe;
-    }
-
-    public void setSociete(Societe societe) {
-        this.societe = societe;
     }
 
     @Override
