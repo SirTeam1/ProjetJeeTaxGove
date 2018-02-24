@@ -69,6 +69,12 @@
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmployeTitle_societe}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.societe}"/>
+                        </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{employeController.prepareCreate}" update=":EmployeCreateForm" oncomplete="PF('EmployeCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":EmployeViewForm" oncomplete="PF('EmployeViewDialog').show()" disabled="#{empty employeController.selected}"/>

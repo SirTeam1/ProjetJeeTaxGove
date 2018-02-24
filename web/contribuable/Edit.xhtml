@@ -16,13 +16,6 @@
                         <p:inputText id="motDePasse" value="#{contribuableController.selected.motDePasse}" title="#{bundle.EditContribuableTitle_motDePasse}" />
                         <p:outputLabel value="#{bundle.EditContribuableLabel_idFiscal}" for="idFiscal" />
                         <p:inputText id="idFiscal" value="#{contribuableController.selected.idFiscal}" title="#{bundle.EditContribuableTitle_idFiscal}" />
-                        <p:outputLabel value="#{bundle.EditContribuableLabel_societe}" for="societe" />
-                        <p:selectOneMenu id="societe" value="#{contribuableController.selected.societe}" >
-                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
-                            <f:selectItems value="#{societeController.itemsAvailableSelectOne}"
-                                           var="societeItem"
-                                           itemValue="#{societeItem}"/>
-                        </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.EditContribuableLabel_nom}" for="nom" />
                         <p:inputText id="nom" value="#{contribuableController.selected.nom}" title="#{bundle.EditContribuableTitle_nom}" />
                         <p:outputLabel value="#{bundle.EditContribuableLabel_pNom}" for="pNom" />
@@ -37,6 +30,13 @@
                         <p:inputText id="profession" value="#{contribuableController.selected.profession}" title="#{bundle.EditContribuableTitle_profession}" />
                         <p:outputLabel value="#{bundle.EditContribuableLabel_id}" for="id" />
                         <p:inputText id="id" value="#{contribuableController.selected.id}" title="#{bundle.EditContribuableTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditContribuableLabel_societe}" for="societe" />
+                        <p:selectOneMenu id="societe" value="#{contribuableController.selected.societe}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{societeController.itemsAvailableSelectOne}"
+                                           var="societeItem"
+                                           itemValue="#{societeItem}"/>
+                        </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{contribuableController.update}" value="#{bundle.Save}" update="display,:ContribuableListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ContribuableEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="ContribuableEditDialog.hide()"/>

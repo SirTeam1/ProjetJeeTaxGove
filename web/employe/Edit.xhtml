@@ -26,6 +26,13 @@
                         <p:inputText id="profession" value="#{employeController.selected.profession}" title="#{bundle.EditEmployeTitle_profession}" />
                         <p:outputLabel value="#{bundle.EditEmployeLabel_id}" for="id" />
                         <p:inputText id="id" value="#{employeController.selected.id}" title="#{bundle.EditEmployeTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditEmployeLabel_societe}" for="societe" />
+                        <p:selectOneMenu id="societe" value="#{employeController.selected.societe}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{societeController.itemsAvailableSelectOne}"
+                                           var="societeItem"
+                                           itemValue="#{societeItem}"/>
+                        </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{employeController.update}" value="#{bundle.Save}" update="display,:EmployeListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EmployeEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="EmployeEditDialog.hide()"/>

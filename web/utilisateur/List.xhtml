@@ -35,15 +35,15 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListUtilisateurTitle_droitFiscale}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.droitFiscale}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
                                 <h:outputText value="#{bundle.ListUtilisateurTitle_motDePasse}"/>
                             </f:facet>
                             <h:outputText value="#{item.motDePasse}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUtilisateurTitle_droitFiscale}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.droitFiscale}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
@@ -86,6 +86,12 @@
                                 <h:outputText value="#{bundle.ListUtilisateurTitle_id}"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListUtilisateurTitle_societe}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.societe}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{utilisateurController.prepareCreate}" update=":UtilisateurCreateForm" oncomplete="PF('UtilisateurCreateDialog').show()"/>

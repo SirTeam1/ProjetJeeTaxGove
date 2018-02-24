@@ -53,9 +53,9 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListSocieteTitle_numFax}"/>
+                                <h:outputText value="#{bundle.ListSocieteTitle_numFix}"/>
                             </f:facet>
-                            <h:outputText value="#{item.numFax}"/>
+                            <h:outputText value="#{item.numFix}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
@@ -65,9 +65,9 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListSocieteTitle_contribuable}"/>
+                                <h:outputText value="#{bundle.ListSocieteTitle_compteBanquaire}"/>
                             </f:facet>
-                            <h:outputText value="#{item.contribuable}"/>
+                            <h:outputText value="#{item.compteBanquaire}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{societeController.prepareCreate}" update=":SocieteCreateForm" oncomplete="PF('SocieteCreateDialog').show()"/>
